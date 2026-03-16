@@ -16,29 +16,38 @@
   ::selection {
     @apply bg-accent/30 text-white;
   }
+
+  /* Native details/summary reset */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary {
+    list-style: none;
+  }
+
+  details[open] summary .faq-chevron {
+    transform: rotate(180deg);
+  }
 }
 
 @layer components {
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-20 md:py-28;
-  }
-
-  .card-glass {
-    @apply bg-navy-700/50 border border-white/[0.06] rounded-2xl backdrop-blur-sm;
+    @apply px-6 sm:px-8 lg:px-12 py-24 md:py-36;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-navy-900
-           font-semibold rounded-xl transition-all duration-200
-           hover:bg-accent/90 hover:shadow-[0_0_32px_rgba(255,148,48,0.3)]
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent text-navy-900
+           font-semibold rounded-full text-base
+           hover:opacity-90
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2
            focus-visible:ring-offset-navy-900;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4
-           border border-white/20 text-white font-semibold rounded-xl
-           transition-all duration-200 hover:border-white/40 hover:bg-white/5
+    @apply inline-flex items-center justify-center px-8 py-4
+           border border-white/20 text-white font-medium rounded-full text-base
+           hover:border-white/40
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2
            focus-visible:ring-offset-navy-900;
   }
